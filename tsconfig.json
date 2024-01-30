@@ -1,6 +1,6 @@
 {
   "files": [],
-  "references": [
+  "references": [ // all paths added here will produce declaration file in isolation, so we can take them as diferent modules
     {
       "path": "./tsconfig.node.json"
     },

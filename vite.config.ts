@@ -7,13 +7,29 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/vue-social-media/', // for github page
-  plugins: [
-    vue(),
-    vueJsx(),
-  ],
+  plugins: [vue(), vueJsx()],
   resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+    alias: [
+      // /@/xxxx => src/xxxx
+      {
+        find: /\/@\//,
+        replacement: fileURLToPath(new URL('./src', import.meta.url))
+      },
+      // /#/xxxx => types/xxxx
+      {
+        find: /\/#\//,
+        replacement: fileURLToPath(new URL('./types', import.meta.url))
+      },
+      // @/xxxx => src/xxxx
+      {
+        find: /@\//,
+        replacement: fileURLToPath(new URL('./src', import.meta.url))
+      },
+      // #/xxxx => types/xxxx
+      {
+        find: /#\//,
+        replacement: fileURLToPath(new URL('./types', import.meta.url))
+      },
+    ]
   }
 })
