@@ -1,0 +1,50 @@
+{
+  "name": "@denny/eslint-config",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denny-Zhang/vue-social-media.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Denny-Zhang/vue-social-media/issues"
+  },
+  "homepage": "https://github.com/Denny-Zhang/vue-social-media#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./strict": {
+      "types": "./dist/strict.d.ts",
+      "import": "./dist/strict.mjs",
+      "require": "./dist/strict.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "npm rimraf .turbo node_modules dist",
+    "lint": "npm eslint .",
+    "stub": "npm unbuild --stub"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-vue": "^9.21.0",
+    "vue-eslint-parser": "^9.4.2"
+  }
+}
