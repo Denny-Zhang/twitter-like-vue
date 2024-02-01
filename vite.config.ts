@@ -13,23 +13,23 @@ export default defineConfig({
       // /@/xxxx => src/xxxx
       {
         find: /\/@\//,
-        replacement: fileURLToPath(new URL('./src', import.meta.url))
+        replacement: fileURLToPath(new URL('./src', import.meta.url)),
       },
       // /#/xxxx => types/xxxx
       {
         find: /\/#\//,
-        replacement: fileURLToPath(new URL('./types', import.meta.url))
+        replacement: fileURLToPath(new URL('./types', import.meta.url)),
       },
       // @/xxxx => src/xxxx
       {
         find: /@\//,
-        replacement: fileURLToPath(new URL('./src', import.meta.url))
+        replacement: fileURLToPath(new URL('./src', import.meta.url)),
       },
       // #/xxxx => types/xxxx
       {
         find: /#\//,
-        replacement: fileURLToPath(new URL('./types', import.meta.url))
+        replacement: fileURLToPath(new URL('./types', import.meta.url)),
       },
-    ]
-  }
+    ],
+  },
 })

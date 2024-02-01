@@ -11,7 +11,7 @@ import { publish } from 'gh-pages'
 
 const options = {
   branch: 'gh-pages',
-  repo: 'https://github.com/Denny-Zhang/vue-social-media.git' // project github repo
+  repo: 'https://github.com/Denny-Zhang/vue-social-media.git', // project github repo
 }
 
 const callback = (err) => {

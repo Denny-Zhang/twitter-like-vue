@@ -4,7 +4,6 @@ declare module '*.vue' {
   export default component
 }
 
-
 declare type Nullable<T> = T | null
 
 declare type CustomizedHTMLElement<T> = HTMLElement & T

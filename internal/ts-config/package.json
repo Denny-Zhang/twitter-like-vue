@@ -2,24 +2,24 @@
   "name": "@denny/ts-config",
   "version": "1.0.0",
   "private": true,
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/Denny-Zhang/vue-social-media#readme",
+  "bugs": {
+    "url": "https://github.com/Denny-Zhang/vue-social-media/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Denny-Zhang/vue-social-media.git"
   },
-  "author": "",
   "license": "MIT",
+  "author": "",
   "files": [
     "base.json",
     "node.json",
     "vue-app.json",
     "node-server.json"
   ],
-  "bugs": {
-    "url": "https://github.com/Denny-Zhang/vue-social-media/issues"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/Denny-Zhang/vue-social-media#readme"
+  "devDependencies": {}
 }

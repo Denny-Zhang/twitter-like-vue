@@ -3,17 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "internal/ts-config",
+    "internal/eslint-config"
+  ],
   "scripts": {
-    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "test:unit": "vitest",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "deploy": "npm run build && node ./deploy/ghpages.js",
+    "dev": "vite",
     "format": "prettier --write src/",
+    "postinstall": "turbo run stub",
+    "lint": "turbo run lint",
+    "lint:prettier": "prettier --write .",
+    "preview": "vite preview",
     "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm install",
-    "deploy": "npm run build && node ./deploy/ghpages.js"
+    "test:unit": "vitest",
+    "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -28,6 +34,7 @@
     "@vue/tsconfig": "^0.5.0",
     "gh-pages": "^6.1.1",
     "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.10",
     "rimraf": "^5.0.5",
     "turbo": "^1.12.0",
     "typescript": "~5.3.0",
@@ -35,9 +42,5 @@
     "vite": "^5.0.10",
     "vitest": "^1.0.4",
     "vue-tsc": "^1.8.25"
-  },
-  "workspaces": [
-    "internal/ts-config",
-    "internal/eslint-config"
-  ]
+  }
 }
