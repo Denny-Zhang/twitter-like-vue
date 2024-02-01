@@ -2,10 +2,10 @@
   "name": "vue-social-media",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "workspaces": [
     "internal/ts-config",
-    "internal/eslint-config"
+    "internal/eslint-config",
+    "internal/stylelint-config"
   ],
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
@@ -16,6 +16,7 @@
     "postinstall": "turbo run stub",
     "lint": "turbo run lint",
     "lint:prettier": "prettier --write .",
+    "lint:stylelint": "stylelint \"**/*.{vue,css,less,scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/",
     "preview": "vite preview",
     "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm install",
     "test:unit": "vitest",
