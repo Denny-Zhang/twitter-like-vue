@@ -2,11 +2,6 @@
   "name": "vue-social-media",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "internal/ts-config",
-    "internal/eslint-config",
-    "internal/stylelint-config"
-  ],
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",
@@ -14,11 +9,12 @@
     "dev": "vite",
     "format": "prettier --write src/",
     "postinstall": "turbo run stub",
+    "clean": "turbo run clean",
     "lint": "turbo run lint",
     "lint:prettier": "prettier --write .",
     "lint:stylelint": "stylelint \"**/*.{vue,css,less,scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/",
     "preview": "vite preview",
-    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm install",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package-lock.json && rimraf node_modules && pnpm install",
     "test:unit": "vitest",
     "type-check": "vue-tsc --build --force"
   },
@@ -28,6 +24,9 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@denny/eslint-config": "workspace:*",
+    "@denny/stylelint-config": "workspace:*",
+    "@denny/ts-config": "workspace:*",
     "@types/gh-pages": "^6.1.0",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
@@ -43,5 +42,10 @@
     "vite": "^5.0.10",
     "vitest": "^1.0.4",
     "vue-tsc": "^1.8.25"
+  },
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": ">=16.15.1",
+    "pnpm": ">=8.1.0"
   }
 }
