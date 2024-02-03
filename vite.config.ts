@@ -1,35 +1,31 @@
-import { fileURLToPath, URL } from 'node:url'
+import { defineApplicationConfig } from '@denny/vite-config';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/vue-social-media/', // for github page
-  plugins: [vue(), vueJsx()],
-  resolve: {
-    alias: [
-      // /@/xxxx => src/xxxx
-      {
-        find: /\/@\//,
-        replacement: fileURLToPath(new URL('./src', import.meta.url)),
+export default defineApplicationConfig({
+  overrides: {
+    optimizeDeps: {
+      include: [
+        '@iconify/iconify',
+        'ant-design-vue/es/locale/zh_CN',
+        'ant-design-vue/es/locale/en_US',
+      ],
+    },
+    server: {
+      proxy: {
+        '/basic-api': {
+          target: 'http://localhost:3000',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/basic-api`), ''),
+          // only https
+          // secure: false
+        },
+        '/upload': {
+          target: 'http://localhost:3300/upload',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
+        },
       },
-      // /#/xxxx => types/xxxx
-      {
-        find: /\/#\//,
-        replacement: fileURLToPath(new URL('./types', import.meta.url)),
-      },
-      // @/xxxx => src/xxxx
-      {
-        find: /@\//,
-        replacement: fileURLToPath(new URL('./src', import.meta.url)),
-      },
-      // #/xxxx => types/xxxx
-      {
-        find: /#\//,
-        replacement: fileURLToPath(new URL('./types', import.meta.url)),
-      },
-    ],
+    },
   },
-})
+});
