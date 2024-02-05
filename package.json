@@ -22,6 +22,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "crypto-js": "^4.2.0",
+    "lodash-es": "^4.17.21",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "vue": "^3.3.11",
@@ -34,7 +37,9 @@
     "@denny/ts-config": "workspace:*",
     "@denny/vite-config": "workspace:*",
     "@iconify/iconify": "^3.1.1",
+    "@types/crypto-js": "^4.2.2",
     "@types/gh-pages": "^6.1.0",
+    "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.3",

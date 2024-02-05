@@ -8,6 +8,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { setupStore } from '@/stores'
+import { initAppConfigStore } from '@/logics/initAppConfig';
 
 async function bootstrap() {
   const app = createApp(App)
@@ -15,6 +16,10 @@ async function bootstrap() {
   // Configure store
   // 配置 store
   setupStore(app);
+
+  // Initialize internal system configuration
+  // 初始化内部系统配置
+  initAppConfigStore();
 
 
 
