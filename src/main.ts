@@ -6,10 +6,11 @@ import { createApp } from 'vue'
 // import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
+// import router from './router'
 import { setupStore } from '@/stores'
 import { initAppConfigStore } from '@/logics/initAppConfig';
 import { setupI18n } from '@/locales/setupI18n';
+import { router, setupRouter } from '@/router';
 
 async function bootstrap() {
   const app = createApp(App)
@@ -30,7 +31,10 @@ async function bootstrap() {
   await setupI18n(app);
 
 
-app.use(router)
+  // Configure routing
+  // 配置路由
+  setupRouter(app);
+
 
 
 app.mount('#app')

@@ -87,11 +87,11 @@ function defineApplicationConfig(defineOptions: DefineOptions = {}) {
           less: {
             modifyVars: generateModifyVars(),
             javascriptEnabled: true,
-          }
+          },
         },
       },
       plugins,
-    };
+    }
 
     const mergedConfig = mergeConfig(commonConfig(mode), applicationConfig);
 
