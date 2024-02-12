@@ -11,6 +11,7 @@ import { setupStore } from '@/stores'
 import { initAppConfigStore } from '@/logics/initAppConfig';
 import { setupI18n } from '@/locales/setupI18n';
 import { router, setupRouter } from '@/router';
+import { setupRouterGuard } from '@/router/guard';
 
 async function bootstrap() {
   const app = createApp(App)
@@ -36,8 +37,12 @@ async function bootstrap() {
   setupRouter(app);
 
 
+  // router-guard
+  // 路由守卫
+  setupRouterGuard(router);
 
-app.mount('#app')
+
+  app.mount('#app')
 }
 
 bootstrap()

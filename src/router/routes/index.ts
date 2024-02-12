@@ -1,6 +1,6 @@
 import type { AppRouteRecordRaw, AppRouteModule } from '/@/router/types';
 
-// import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '/@/router/routes/basic';
+import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '/@/router/routes/basic';
 
 import { mainOutRoutes } from './mainOut';
 import { PageEnum } from '/@/enums/pageEnum';
@@ -17,8 +17,8 @@ Object.keys(modules).forEach((key) => {
   routeModuleList.push(...modList);
 });
 
-// for permission use to filter and push into router
-// export const asyncRoutes = [PAGE_NOT_FOUND_ROUTE, ...routeModuleList];
+//* for permission use to filter and push into router
+export const asyncRoutes = [PAGE_NOT_FOUND_ROUTE, ...routeModuleList];
 
 // 根路由
 export const RootRoute: AppRouteRecordRaw = {
@@ -45,6 +45,7 @@ export const HomeRoute: AppRouteRecordRaw ={
   meta: {
     icon: 'ion:grid-outline',
     title: t('routes.dashboard.dashboard'),
+    ignoreAuth: true, //TODO: don't need to Auth ??
   },
 }
 
@@ -55,6 +56,6 @@ export const basicRoutes = [
   // LoginRoute,
   HomeRoute,
   ...mainOutRoutes,
-  // REDIRECT_ROUTE,
-  // PAGE_NOT_FOUND_ROUTE,
+  REDIRECT_ROUTE,
+  PAGE_NOT_FOUND_ROUTE,
 ];

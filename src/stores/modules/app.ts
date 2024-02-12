@@ -14,7 +14,7 @@ import { ThemeEnum } from '/@/enums/appEnum'
 import { APP_DARK_MODE_KEY, PROJ_CFG_KEY, API_ADDRESS } from '/@/enums/cacheEnum'
 import { Persistent } from '/@/utils/cache/persistent'
 import { darkMode } from '/@/settings/designSetting'
-// import { resetRouter } from '/@/router' //! TODO: need to add
+import { resetRouter } from '/@/router'
 import { deepMerge } from '/@/utils'
 
 interface AppState {
@@ -91,7 +91,7 @@ export const useAppStore = defineStore({
     },
 
     async resetAllState() {
-      // resetRouter() // ! need to add
+      resetRouter()
       Persistent.clearAll()
     },
     async setPageLoadingAction(loading: boolean): Promise<void> {
