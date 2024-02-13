@@ -13,6 +13,7 @@ import { setupI18n } from '@/locales/setupI18n';
 import { router, setupRouter } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
 import { setupGlobDirectives } from '@/directives';
+import { setupErrorHandle } from '@/logics/error-handle';
 
 async function bootstrap() {
   const app = createApp(App)
@@ -45,6 +46,10 @@ async function bootstrap() {
   // Register global directive
   // 注册全局指令
   setupGlobDirectives(app);
+
+    // Configure global error handling
+  // 配置全局错误处理
+  setupErrorHandle(app);
 
 
   app.mount('#app')
