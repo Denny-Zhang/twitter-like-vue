@@ -21,14 +21,14 @@ Object.keys(modules).forEach((key) => {
 export const asyncRoutes = [PAGE_NOT_FOUND_ROUTE, ...routeModuleList];
 
 // 根路由
-export const RootRoute: AppRouteRecordRaw = {
-  path: '/',
-  name: 'Root',
-  redirect: PageEnum.BASE_HOME,
-  meta: {
-    title: 'Root',
-  },
-};
+// export const RootRoute: AppRouteRecordRaw = {
+//   path: '/',
+//   name: 'Root',
+//   redirect: PageEnum.BASE_HOME,
+//   meta: {
+//     title: 'Root',
+//   },
+// };
 
 // export const LoginRoute: AppRouteRecordRaw = {
 //   path: '/login',
@@ -38,8 +38,9 @@ export const RootRoute: AppRouteRecordRaw = {
 //     title: t('routes.basic.login'),
 //   },
 // };
-export const HomeRoute: AppRouteRecordRaw ={
-  path: '/home',
+//*  因為 Github page 沒有處理CSR路由問題，導致404，因此這裡改為根路由
+export const RootRoute: AppRouteRecordRaw ={
+  path: '/',
   name: 'AccountCenterPage',
   component: () => import('/@/views/demo/page/account/center/index.vue'),
   meta: {
@@ -54,7 +55,7 @@ export const HomeRoute: AppRouteRecordRaw ={
 export const basicRoutes = [
   RootRoute,
   // LoginRoute,
-  HomeRoute,
+  // HomeRoute,
   ...mainOutRoutes,
   REDIRECT_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
