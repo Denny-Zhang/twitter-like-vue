@@ -1,6 +1,8 @@
 import 'uno.css';
 
 import '@/design/index.less';
+// Register icon sprite
+import 'virtual:svg-icons-register';
 
 import { createApp } from 'vue'
 // import { createPinia } from 'pinia'

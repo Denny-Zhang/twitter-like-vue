@@ -76,6 +76,7 @@
   import { usePagination } from '/@/hooks/web/usePagination';
   import { useDebounceFn } from '@vueuse/core';
   import { useI18n } from '/@/hooks/web/useI18n';
+  // registered in main.ts
   import svgIcons from 'virtual:svg-icons-names';
   import { copyText } from '/@/utils/copyTextToClipboard';
   // 没有使用别名引入，是因为WebStorm当前版本还不能正确识别，会报unused警告

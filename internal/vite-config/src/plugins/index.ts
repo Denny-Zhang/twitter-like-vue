@@ -1,13 +1,13 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { type PluginOption } from 'vite';
-// import purgeIcons from 'vite-plugin-purge-icons';
+import purgeIcons from 'vite-plugin-purge-icons';
 
 import { createConfigPluginConfig } from './appConfig';
 import { configCompressPlugin } from './compress';
 import { configHtmlPlugin } from './html';
-import { configMockPlugin } from './mock';
-// import { configSvgIconsPlugin } from './svgSprite';
+// import { configMockPlugin } from './mock'; // TODO: mock
+import { configSvgIconsPlugin } from './svgSprite';
 import { configVisualizerConfig } from './visualizer';
 
 interface Options {
@@ -28,10 +28,10 @@ async function createPlugins({ isBuild, enableMock, compress, enableAnalyze }: O
   vitePlugins.push(configHtmlPlugin({ isBuild }));
 
   // vite-plugin-svg-icons
-  // vitePlugins.push(configSvgIconsPlugin({ isBuild }));
+  vitePlugins.push(configSvgIconsPlugin({ isBuild }));
 
   // vite-plugin-purge-icons
-  // vitePlugins.push(purgeIcons());
+  vitePlugins.push(purgeIcons());
 
   // The following plugins only work in the production environment
   if (isBuild) {
@@ -50,7 +50,7 @@ async function createPlugins({ isBuild, enableMock, compress, enableAnalyze }: O
 
   // vite-plugin-mock
   if (enableMock) {
-    vitePlugins.push(configMockPlugin({ isBuild }));
+    // vitePlugins.push(configMockPlugin({ isBuild })); // TODO: add mock if needed
   }
 
   return vitePlugins;

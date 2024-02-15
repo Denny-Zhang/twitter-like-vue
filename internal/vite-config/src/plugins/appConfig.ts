@@ -13,8 +13,11 @@ export async function createConfigPluginConfig(
   const config = await getEnvConfig();
   // LINK /src/utils/env.ts -> getVariableName
   const APP_NAME = strToHex(config?.VITE_GLOB_APP_TITLE ?? '__APP');
+  // base path to get _app.config.js file
+  const APP_DIR = config?.VITE_GLOB_PUBLIC_PATH ?? '__APP';
   // https://github.com/kirklin/unplugin-config
   return GenerateConfig({
+    baseDir: APP_DIR,
     appName: APP_NAME,
     envVariables: {
       prefix: 'VITE_GLOB_',
