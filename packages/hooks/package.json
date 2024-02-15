@@ -1,0 +1,37 @@
+{
+  "name": "@denny/hooks",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/Denny-Zhang/vue-social-media/issues"
+  },
+  "homepage": "https://github.com/Denny-Zhang/vue-social-media#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denny-Zhang/vue-social-media.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "//build": "pnpm unbuild",
+    "//stub": "pnpm unbuild --stub",
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "lint": "pnpm eslint ."
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@denny/types": "workspace:*"
+  }
+}

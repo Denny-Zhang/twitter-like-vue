@@ -22,7 +22,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@denny/hooks": "workspace:*",
     "@vueuse/core": "^10.7.2",
+    "@zxcvbn-ts/core": "^3.0.4",
     "axios": "^1.6.7",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
@@ -30,17 +32,21 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "qs": "^6.11.2",
+    "resize-observer-polyfill": "^1.5.1",
     "vue": "^3.3.11",
     "vue-i18n": "^9.9.1",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue-types": "^5.1.1"
   },
   "devDependencies": {
     "@ant-design/icons-vue": "^7.0.1",
     "@denny/eslint-config": "workspace:*",
     "@denny/stylelint-config": "workspace:*",
     "@denny/ts-config": "workspace:*",
+    "@denny/types": "workspace:*",
     "@denny/vite-config": "workspace:*",
     "@iconify/iconify": "^3.1.1",
+    "@purge-icons/generated": "^0.10.0",
     "@types/crypto-js": "^4.2.2",
     "@types/gh-pages": "^6.1.0",
     "@types/lodash-es": "^4.17.12",

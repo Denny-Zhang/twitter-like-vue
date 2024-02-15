@@ -40,11 +40,11 @@ export const RootRoute: AppRouteRecordRaw = {
 // };
 export const HomeRoute: AppRouteRecordRaw ={
   path: '/home',
-  name: 'HomeView',
-  component: () => import('/@/views/HomeView.vue'),
+  name: 'AccountCenterPage',
+  component: () => import('/@/views/demo/page/account/center/index.vue'),
   meta: {
-    icon: 'ion:grid-outline',
-    title: t('routes.dashboard.dashboard'),
+    // icon: 'ion:grid-outline',
+    title: t('routes.demo.page.accountCenter'),
     ignoreAuth: true, //TODO: don't need to Auth ??
   },
 }
