@@ -12,6 +12,7 @@ import { publish } from 'gh-pages'
 const options = {
   branch: 'gh-pages',
   repo: 'https://github.com/Denny-Zhang/vue-social-media.git', // project github repo
+  nojekyll: true
 }
 
 const callback = (err) => {
