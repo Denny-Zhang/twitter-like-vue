@@ -71,18 +71,18 @@ export const details: ListItem[] = [
 export const achieveList: TabItem[] = [
   {
     key: '1',
-    name: '文章',
+    name: '專案',
     component: 'Article',
   },
   {
     key: '2',
-    name: '应用',
-    component: 'Application',
+    name: '活動',
+    component: 'Project',
   },
   {
     key: '3',
-    name: '项目',
-    component: 'Project',
+    name: '關於',
+    component: 'Application',
   },
 ]
 
@@ -92,20 +92,37 @@ export const actions: any[] = [
   { icon: 'bx:bxs-message-dots', text: '2', color: '#42d27d' },
 ]
 
-export const articleList = (() => {
+export const projectList = (() => {
   const result: any[] = []
-  for (let i = 0; i < 4; i++) {
-    result.push({
-      title: 'Denny Admin',
-      description: ['Denny', '设计语言', 'Typescript'],
-      content: '基于Vue Next, TypeScript, Ant Design实现的一套完整的企业级后台管理系统。',
-      time: '2020-11-14 11:20',
-    })
+  result.push({
+    title: 'SmeetH私覓',
+    description: ['私密交友', '聊色軟體', '素人自拍短片', '18+'],
+    content: '基於 Vue 2,vue-router, vuex 和 sass 構建完整的前台項目。',
+    url: 'https://smeeth.in/',
+    fullTitle: 'SmeetH私覓 - 私密交友｜聊色軟體｜素人自拍短片 | smeeth.in',
+    fullDescription:
+      'SmeetH私覓｜大尺度聊天交友網，眾多正妹的私密影片照片陪聊心事，水鑽解鎖素人動態永久收藏。OL、護理師、單身美人妻、女大生自拍線上看，亞洲最強聊色看片網，真人一對一親自回覆壞壞訊息。',
+    imgUrl: 'https://smeeth.in/download/searchImage.png',
+    docUrl: 'https://www.notion.so/Smeeth-5fe3a5a4e93941889757a84dda7937d6?pvs=4'
+  })
+  return result
+})()
+
+const eventList = [
+  {
+    title: 'Denny Admin',
+    content: '基于Vue Next, TypeScript, Ant Design实现的一套完整的企业级后台管理系统。',
+  },
+]
+export const smeethEventList = (() => {
+  const result: any[] = []
+  for (let i = 0; i < eventList.length; i++) {
+    result.push(eventList[i])
   }
   return result
 })()
 
-export const applicationList = (() => {
+export const aboutThisProject = (() => {
   const result: any[] = []
   for (let i = 0; i < 8; i++) {
     result.push({
@@ -115,17 +132,6 @@ export const applicationList = (() => {
       active: '100',
       new: '1,799',
       download: 'bx:bx-download',
-    })
-  }
-  return result
-})()
-
-export const projectList = (() => {
-  const result: any[] = []
-  for (let i = 0; i < 8; i++) {
-    result.push({
-      title: 'Denny Admin',
-      content: '基于Vue Next, TypeScript, Ant Design实现的一套完整的企业级后台管理系统。',
     })
   }
   return result

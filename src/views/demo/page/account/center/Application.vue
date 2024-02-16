@@ -31,7 +31,7 @@
   import { defineComponent } from 'vue';
   import { List, Card, Row, Col } from 'ant-design-vue';
   import Icon from '@/components/Icon/Icon.vue';
-  import { applicationList } from './data';
+  import { aboutThisProject } from './data';
 
   export default defineComponent({
     components: {
@@ -45,7 +45,7 @@
     setup() {
       return {
         prefixCls: 'account-center-application',
-        list: applicationList,
+        list: aboutThisProject,
       };
     },
   });

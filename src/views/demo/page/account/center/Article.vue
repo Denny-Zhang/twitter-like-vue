@@ -6,6 +6,7 @@
           <template #description>
             <div :class="`${prefixCls}__content`">
               {{ item.content }}
+              <a :href="item.docUrl" target="_blank">(完整介紹)</a>
             </div>
           </template>
           <template #title>
@@ -21,20 +22,21 @@
             </div>
           </template>
         </ListItemMeta>
-        <div>
-          <template v-for="action in actions" :key="action.text">
-            <div :class="`${prefixCls}__action`">
-              <Icon
-                v-if="action.icon"
-                :class="`${prefixCls}__action-icon`"
-                :icon="action.icon"
-                :color="action.color"
-              />
-              {{ action.text }}
+        <a :href="item.url" target="_blank">
+            <div  :class="`${prefixCls}__link`">
+              <div :class="`${prefixCls}__link-content`">
+                  <div>{{ item.fullTitle }}</div>
+                  <div>{{ item.fullDescription }} </div>
+                  <div>
+                  <img :src="item.imgUrl" width="30px" height="30px">
+                    {{ item.url }}</div>
+              </div>
+              <div :class="`${prefixCls}__link-img`">
+                  <img :src="item.imgUrl">
+              </div>
+
             </div>
-          </template>
-          <span :class="`${prefixCls}__time`">{{ item.time }}</span>
-        </div>
+          </a>
       </ListItem>
     </template>
   </List>
@@ -43,7 +45,7 @@
   import { defineComponent } from 'vue';
   import { List, Tag } from 'ant-design-vue';
   import Icon from '@/components/Icon/Icon.vue';
-  import { actions, articleList } from './data';
+  import { actions, projectList } from './data';
 
   export default defineComponent({
     components: {
@@ -56,7 +58,7 @@
     setup() {
       return {
         prefixCls: 'account-center-article',
-        list: articleList,
+        list: projectList,
         actions,
       };
     },
@@ -64,6 +66,9 @@
 </script>
 <style lang="less" scoped>
   .account-center-article {
+    a  {
+       color: inherit;
+    }
     &__title {
       margin-bottom: 12px;
       font-size: 18px;
@@ -71,6 +76,12 @@
 
     &__content {
       color: rgb(0 0 0 / 65%);
+      & :link {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+      }
     }
 
     &__action {
@@ -92,6 +103,43 @@
       position: absolute;
       right: 20px;
       color: rgb(0 0 0 / 45%);
+    }
+    
+    &__link {
+      display: flex;
+      min-height: 100px;
+      width: 100%;
+      border: 1px solid gray;
+      border-radius: 10px;
+      overflow: hidden;
+      &-content {
+        flex: 4 1;
+        padding: 15px;
+        & div:first-child {
+          font-size: 20px;
+        }
+        & div:nth-child(2) {
+          color: gray;
+        }
+        & div:nth-child(3) {
+          display: flex;
+          align-items: center;
+        }
+        & div:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+      &-img {
+        flex: 1 1;
+        position: relative;
+        overflow: hidden;
+        & img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
     }
   }
 </style>
