@@ -4,15 +4,17 @@
       <template v-for="item in list" :key="item.title">
         <a-col :span="6">
           <ListItem>
-            <Card :hoverable="true" :class="`${prefixCls}__card`">
-              <img :src="demoImg" />
-              <div :class="`${prefixCls}__card-title`">
-                {{ item.title }}
-              </div>
-              <div :class="`${prefixCls}__card-content`">
-                {{ item.content }}
-              </div>
-            </Card>
+            <a :href="item.url" target="_blank">
+              <Card :hoverable="true" :class="`${prefixCls}__card`">
+                <img :src="item.imgUrl" />
+                <div :class="`${prefixCls}__card-title`">
+                  {{ item.title }}
+                </div>
+                <div :class="`${prefixCls}__card-content`">
+                  {{ item.content }}
+                </div>
+              </Card>
+            </a>
           </ListItem>
         </a-col>
       </template>
@@ -20,10 +22,9 @@
   </List>
 </template>
 <script lang="ts">
-  import { defineComponent } from 'vue';
-  import { List, Card, Row, Col } from 'ant-design-vue';
-  import demoImg from '/@/assets/images/demo.png';
-  import { smeethEventList } from './data';
+  import { defineComponent } from 'vue'
+  import { List, Card, Row, Col } from 'ant-design-vue'
+  import { smeethEventList } from './data'
 
   export default defineComponent({
     components: {
@@ -37,10 +38,9 @@
       return {
         prefixCls: 'account-center-project',
         list: smeethEventList,
-        demoImg,
-      };
+      }
     },
-  });
+  })
 </script>
 <style lang="less">
   .account-center-project {
@@ -59,8 +59,8 @@
       &-title {
         margin: 5px 10px;
         color: rgb(0 0 0 / 85%);
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 20px;
+        font-weight: bold;
       }
 
       &-content {

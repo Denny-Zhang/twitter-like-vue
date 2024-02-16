@@ -6,7 +6,7 @@
           <template #description>
             <div :class="`${prefixCls}__content`">
               {{ item.content }}
-              <a :href="item.docUrl" target="_blank">(完整介紹)</a>
+              <a :href="item.docUrl" target="_blank">(查看更多..)</a>
             </div>
           </template>
           <template #title>
