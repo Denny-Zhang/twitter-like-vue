@@ -11,44 +11,47 @@ export interface TabItem {
 }
 
 export const tags: string[] = [
-  '很有想法的',
-  '专注设计',
-  '川妹子',
-  '大长腿',
-  '海纳百川',
-  '前端开发',
-  'vue3',
+  '富含創造力',
+  '善於傾聽',
+  '喜歡交流',
+  '個性直接',
+  '最小努力原則',
+  '專注研究設計',
+  '前端開發',
+  'vue2/3',
+  'DDD',
+  '架構研究',
 ]
 
 export const teams: ListItem[] = [
   {
-    icon: 'ri:alipay-fill',
-    title: '科学搬砖组',
-    color: '#ff4000',
-  },
-  {
     icon: 'emojione-monotone:letter-a',
-    title: '中二少年团',
+    title: '英文',
+    color: '#55d187',
+  },
+  {
+    icon: 'solar:pen-bold',
+    title: '畫畫',
     color: '#7c51b8',
   },
   {
-    icon: 'ri:alipay-fill',
-    title: '高逼格设计',
+    icon: 'icon-park-outline:muscle',
+    title: '健身',
+    color: 'orange',
+  },
+  {
+    icon: 'fluent-emoji:water-wave',
+    title: '游泳',
     color: '#00adf7',
   },
   {
-    icon: 'jam:codepen-circle',
-    title: '程序员日常',
-    color: '#00adf7',
-  },
-  {
-    icon: 'fa:behance-square',
-    title: '科学搬砖组',
+    icon: 'logos:adobe-animate',
+    title: '動漫',
     color: '#7c51b8',
   },
   {
-    icon: 'jam:codepen-circle',
-    title: '程序员日常',
+    icon: 'material-symbols:mindfulness-outline',
+    title: '心理學',
     color: '#ff4000',
   },
 ]
@@ -56,15 +59,15 @@ export const teams: ListItem[] = [
 export const details: ListItem[] = [
   {
     icon: 'ic:outline-contacts',
-    title: '交互专家',
+    title: '交互專家',
   },
   {
     icon: 'grommet-icons:cluster',
-    title: '某某某事业群',
+    title: '前端教科書',
   },
   {
     icon: 'bx:bx-home-circle',
-    title: '福建省厦门市',
+    title: '高雄市三民區',
   },
 ]
 
@@ -107,7 +110,7 @@ export const projectList = (() => {
   }, {
     title: 'vue-social-world 專案',
     description: ['研究', '社交', '關於我'],
-    content: '參照基於 vue-vben-admin 後台專案建構而成的前台，目前部署於Github page上，作為展示用途。目前尚於研究中...',
+    content: '參照基於 vue-vben-admin 後台專案建構而成的前台，目前部署於Github pages上，作為展示用途。目前尚於研究中...',
     url: 'https://github.com/Denny-Zhang/vue-social-media',
     fullTitle: 'Github | vue-social-world',
     fullDescription:

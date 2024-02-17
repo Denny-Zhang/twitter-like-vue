@@ -7,7 +7,7 @@
             <div :class="`${prefixCls}-top__avatar`">
               <img width="70" :src="avatar" />
               <span>Denny</span>
-              <div>海纳百川，有容乃大</div>
+              <div>細微改變，巨大變化</div>
             </div>
           </a-col>
           <a-col :span="16">
@@ -23,7 +23,7 @@
         </a-row>
       </a-col>
       <a-col :span="7" :class="`${prefixCls}-col`">
-        <CollapseContainer title="标签" :canExpan="false">
+        <CollapseContainer title="標籤" :canExpan="false">
           <template v-for="tag in tags" :key="tag">
             <Tag class="mb-2">
               {{ tag }}
@@ -32,7 +32,7 @@
         </CollapseContainer>
       </a-col>
       <a-col :span="8" :class="`${prefixCls}-col`">
-        <CollapseContainer :class="`${prefixCls}-top__team`" title="团队" :canExpan="false">
+        <CollapseContainer :class="`${prefixCls}-top__team`" title="興趣" :canExpan="false">
           <div v-for="(team, index) in teams" :key="index" :class="`${prefixCls}-top__team-item`">
             <Icon :icon="team.icon" :color="team.color" />
             <span>{{ team.title }}</span>
@@ -80,7 +80,8 @@
     },
     setup() {
       const userStore = useUserStore();
-      const avatar = computed(() => userStore.getUserInfo.avatar || headerImg);
+      const myAvatar = 'https://file.notion.so/f/f/f37e5730-aca4-4b7a-8034-c3a06328bb7a/2b814edf-8d38-41c4-9483-403a201bc11a/Untitled.png?id=12a61568-6f53-4432-957d-98bda0a07ccf&table=block&spaceId=f37e5730-aca4-4b7a-8034-c3a06328bb7a&expirationTimestamp=1708228800000&signature=EIrImMVBZ6a14XobMc0TZT9dVaxy2aBzUF0dt6z00kI&downloadName=Untitled.png'
+      const avatar = computed(() => userStore.getUserInfo.avatar || myAvatar || headerImg);
       return {
         prefixCls: 'account-center',
         avatar,
