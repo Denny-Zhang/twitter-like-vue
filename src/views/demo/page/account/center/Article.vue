@@ -75,12 +75,11 @@
     }
 
     &__content {
-      color: rgb(0 0 0 / 65%);
+      color: @text-color-base;
       & :link {
         text-decoration: underline;
         font-weight: bold;
         font-size: 16px;
-        color: white;
       }
     }
 

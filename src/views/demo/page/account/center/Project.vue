@@ -58,8 +58,8 @@
 
       &-title {
         margin: 5px 10px;
-        color: rgb(0 0 0 / 85%);
-        font-size: 20px;
+        color: @text-color-base;
+        font-size: 16px;
         font-weight: bold;
       }
 
