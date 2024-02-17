@@ -76,14 +76,14 @@ export const achieveList: TabItem[] = [
   },
   {
     key: '2',
-    name: '活動',
+    name: 'Smeeth活動',
     component: 'Project',
   },
-  {
-    key: '3',
-    name: '關於',
-    component: 'Application',
-  },
+  // {
+  //   key: '3',
+  //   name: '關於',
+  //   component: 'Application',
+  // },
 ]
 
 export const actions: any[] = [
@@ -102,8 +102,18 @@ export const projectList = (() => {
     fullTitle: 'SmeetH私覓 - 私密交友｜聊色軟體｜素人自拍短片 | smeeth.in',
     fullDescription:
       'SmeetH私覓｜大尺度聊天交友網，眾多正妹的私密影片照片陪聊心事，水鑽解鎖素人動態永久收藏。OL、護理師、單身美人妻、女大生自拍線上看，亞洲最強聊色看片網，真人一對一親自回覆壞壞訊息。',
-    imgUrl: 'https://smeeth.in/download/searchImage.png',
+    imgUrl: 'https://smeeth.in/download/shareImage.png',
     docUrl: 'https://www.notion.so/Smeeth-5fe3a5a4e93941889757a84dda7937d6?pvs=4'
+  }, {
+    title: 'vue-social-world 專案',
+    description: ['研究', '社交', '關於我'],
+    content: '參照基於 vue-vben-admin 後台專案建構而成的前台，目前部署於Github page上，作為展示用途。目前尚於研究中...',
+    url: 'https://github.com/Denny-Zhang/vue-social-media',
+    fullTitle: 'Github | vue-social-world',
+    fullDescription:
+      'GitHub is where people build software. More than 100 million people use GitHub to discover, fork, and contribute to over 420 million projects.',
+    imgUrl: 'https://github.com/fluidicon.png',
+    docUrl: 'https://www.notion.so/vue-social-media-6fe9a22b6dd6483cbeb11ff8b1b2617a?pvs=4'
   })
   return result
 })()
