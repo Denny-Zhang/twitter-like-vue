@@ -6,7 +6,7 @@
           <ListItem>
             <a :href="item.url" target="_blank">
               <Card :hoverable="true" :class="`${prefixCls}__card`">
-                <img :src="item.imgUrl" />
+                <img :src="getImg(item.imgUrl)" />
                 <div :class="`${prefixCls}__card-title`">
                   {{ item.title }}
                 </div>
@@ -35,9 +35,11 @@
       [Col.name]: Col,
     },
     setup() {
+      const getImg = (path)  => new URL(import.meta.env.VITE_PUBLIC_PATH + path, import.meta.url).href
       return {
         prefixCls: 'account-center-project',
         list: smeethEventList,
+        getImg,
       }
     },
   })

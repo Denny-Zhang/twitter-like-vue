@@ -64,7 +64,8 @@
   import headerImg from '/@/assets/images/header.jpg';
   import { tags, teams, details, achieveList } from './data';
   import { useUserStore } from '/@/stores/modules/user';
-
+  import myAvatar from '@/assets/images/avatar.png'
+  
   export default defineComponent({
     components: {
       CollapseContainer,
@@ -80,7 +81,6 @@
     },
     setup() {
       const userStore = useUserStore();
-      const myAvatar = 'https://file.notion.so/f/f/f37e5730-aca4-4b7a-8034-c3a06328bb7a/2b814edf-8d38-41c4-9483-403a201bc11a/Untitled.png?id=12a61568-6f53-4432-957d-98bda0a07ccf&table=block&spaceId=f37e5730-aca4-4b7a-8034-c3a06328bb7a&expirationTimestamp=1708228800000&signature=EIrImMVBZ6a14XobMc0TZT9dVaxy2aBzUF0dt6z00kI&downloadName=Untitled.png'
       const avatar = computed(() => userStore.getUserInfo.avatar || myAvatar || headerImg);
       return {
         prefixCls: 'account-center',
